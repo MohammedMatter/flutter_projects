@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:terhal_project/screens/shopping_page.dart';
 
 class PaymentConfirmationScreen extends StatelessWidget {
   const PaymentConfirmationScreen({super.key});
@@ -13,7 +14,6 @@ class PaymentConfirmationScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-
           Center(
             child: Container(
               decoration: BoxDecoration(
@@ -45,14 +45,19 @@ class PaymentConfirmationScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ShoppingPage(),
+              ));
+            },
             style: ButtonStyle(
-            
                 foregroundColor: const WidgetStatePropertyAll(Colors.white),
-                shape:  WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
-                backgroundColor: const WidgetStatePropertyAll(Color(0xff0EC7FF)),
-                minimumSize:
-                    WidgetStatePropertyAll(Size(screenWidth * 0.9, screenHight*0.07))),
+                shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5))),
+                backgroundColor:
+                    const WidgetStatePropertyAll(Color(0xff0EC7FF)),
+                minimumSize: WidgetStatePropertyAll(
+                    Size(screenWidth * 0.9, screenHight * 0.07))),
             child: const Text(
               'الحجز مرة اخرى',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
